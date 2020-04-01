@@ -1,10 +1,43 @@
 .restaurant {
   font-size: 1.2rem;
-  margin: 1rem auto;
+  margin: 3rem auto;
   text-decoration: none;
-  color: black;
-  display: block;
+  color: white;
+  font-family: Montserrat;
+  letter-spacing: 0.2px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 20px;
+  display: inline-block;
   &:hover > * {
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid white;
   }
+  strong {
+    font-family: "Peace Sans";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 33px;
+    color: #fdbb48;
+  }
+  &:nth-of-type(2n + 2) {
+    strong {
+      color: #92d7e5;
+    }
+  }
+}
+.button {
+  font-family: Kanit;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 18px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: transparent;
+  outline: none;
+  padding: 25px 40px;
+  cursor: pointer;
+  color: #fdbb48;
+  border: 2px solid #fdbb48;
 }

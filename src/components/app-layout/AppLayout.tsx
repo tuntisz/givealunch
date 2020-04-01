@@ -42,21 +42,6 @@ export default ({ children }: IAppLayoutProps) => (
         to="/about"
       />
     </Header>
-
     {children}
-
-    <Footer
-      logo={<StarterLogo />}
-      social={[
-        { icon: <Dribbble />, to: 'https://dribbble.com/ueno' },
-        { icon: <Twitter />, to: 'https://twitter.com/uenodotco' },
-        { icon: <Github />, to: 'https://github.com/ueno-llc' },
-        { icon: <Instagram />, to: 'https://www.instagram.com/uenodotco' },
-        { icon: <Facebook />, to: 'https://www.facebook.com/uenodotco' },
-        { icon: <Linkedin />, to: 'https://www.linkedin.com/company/ueno' },
-      ]}
-    />
-
-    {isDev && <Devtools />}
   </div>
 );

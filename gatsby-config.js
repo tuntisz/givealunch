@@ -1,7 +1,6 @@
 const path = require('path');
 
 module.exports = {
-  pathPrefix: "givealunch",
   siteMetadata: {
     title: 'Give Your Lunch',
   },
@@ -53,6 +52,17 @@ module.exports = {
           },
         ]
       }
-    }
+    },{
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        custom: {
+          families: ['Peace Sans'],
+          urls: ["fonts/fonts.css"],
+        },
+        google: {
+          families: ['Montserrat:400,500', 'Kanit:400,700']
+        }
+      },
+    },
   ],
 }

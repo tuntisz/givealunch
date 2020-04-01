@@ -1,23 +1,18 @@
 {
-  "name": "ueno-gatsby-starter",
-  "description": "Opinionated Gatsby starter by Ueno",
+  "name": "givealunch",
+  "description": "Give a Lunch helps feed hungry hospital workers while supporting local business",
   "version": "1.0.0",
   "license": "MIT",
   "keywords": [
     "gatsby",
-    "starter",
-    "react",
-    "typescript",
-    "gatsby-starter",
-    "ueno"
+    "covid19"
   ],
   "contributors": [
-    "Birkir Gudjonsson <birkir.gudjonsson@gmail.com>",
-    "Jérémy Barbet <jeremgraph@gmail.com>"
+    "Tyler Untisz <tuntisz@gmail.com>"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ueno-llc/ueno-gatsby-starter"
+    "url": "https://github.com/tuntisz/givealunch"
   },
   "scripts": {
     "dev": "gatsby develop",
@@ -27,9 +22,10 @@
     "lint": "npm run tslint && npm run stylelint",
     "tslint": "tslint --fix 'src/**/*.{ts,tsx}' -p .",
     "stylelint": "stylelint 'src/**/*.scss' --syntax scss",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
+    "deploy": "gatsby build && gh-pages -d public"
   },
   "dependencies": {
+    "airtable": "^0.8.1",
     "gatsby": "2.1.23",
     "gatsby-image": "2.0.31",
     "gatsby-plugin-config": "1.0.7",
@@ -40,6 +36,7 @@
     "gatsby-plugin-sharp": "2.0.25",
     "gatsby-plugin-typescript": "2.0.10",
     "gatsby-plugin-ueno": "2.0.1",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-airtable": "^2.1.0",
     "gatsby-source-filesystem": "^2.2.2",
     "gatsby-transformer-sharp": "2.1.15",
@@ -53,6 +50,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.3.4",
+    "@types/airtable": "^0.5.7",
     "@types/gsap": "1.20.2",
     "@types/lodash": "4.14.122",
     "@types/node": "11.10.4",
@@ -61,10 +59,18 @@
     "@types/react-helmet": "5.0.8",
     "@ueno/stylelint-config": "1.1.2",
     "@ueno/tslint-config": "1.0.5",
+    "husky": "^4.2.5",
+    "prettier": "^2.0.4",
+    "pretty-quick": "^2.0.1",
     "rimraf": "2.6.3",
     "stylelint": "9.10.1",
     "tslint": "5.13.1",
     "tslint-react": "3.6.0",
     "typescript": "3.3.3333"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   }
 }

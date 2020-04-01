@@ -1,5 +1,4 @@
 @import '~styles/reset';
-@import '~styles/fonts.css';
 
 /* stylelint-disable selector-max-type  */
 @-ms-viewport {
@@ -63,6 +62,7 @@ body {
   font-family: $font-family;
   line-height: $line-height;
   text-size-adjust: 100%; // iOS on orientation change
+  background: #212E60;
 
   color: $color-font;
 }
