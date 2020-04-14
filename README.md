@@ -19,8 +19,7 @@ The site is built with Gatsby started with the [Ueno Starter](https://www.gatsby
 1. Get [access to airtable](https://airtable.com/invite/l?inviteId=invB6xFse6TbB1BmT&inviteToken=0055f625782dd335f34548c9d6e1ffbc71464e35b1c1549018e10ad9c9b23c47)
 2. Copy your Airtable API key (Account -> Generate API Key)
 3. `yarn install`
-4. `export AIRTABLE_API_KEY=${your_api_key} yarn dev`
 
 ## Running
 
-- `gatsby develop`
+- `yarn dev`
