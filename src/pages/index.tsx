@@ -1,16 +1,13 @@
 import * as React from 'react';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
-import Airtable from 'airtable';
+
+import { FetchRestaurants } from 'services/Airtable';
 
 import { Intro } from 'components/intro/Intro';
 import RestaurantList from 'components/restaurant-list/RestaurantList';
 
 import s from './index.scss';
-
-const readOnlyApiKey = 'key2a9aPpR6jDvtau';
-const appId = 'appKoO9jQuqptnJNk';
-const base = new Airtable({ apiKey: readOnlyApiKey }).base(appId);
 
 const RestaurantSearch = () => {
   // tslint:disable-next-line:no-shadowed-variable
@@ -24,35 +21,28 @@ const RestaurantSearch = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    base('Restaurants')
-      .select({
-        // Selecting the first 3 records in Grid view:
-        maxRecords: 100,
-        view: 'Grid view',
-        filterByFormula: `OR(FIND("${query.toLowerCase()}", LOWER({Who are they helping})), FIND("${query.toLowerCase()}", LOWER(City)))`,
-      })
-      .eachPage(
-        function page(results: [any], fetchNextPage: () => any) {
-          // This function (`page`) will get called for each page of records.
+    FetchRestaurants(query).eachPage(
+      function page(results: [any], fetchNextPage: () => any) {
+        // This function (`page`) will get called for each page of records.
 
-          setRecords(results);
-          const element = document.getElementById('results');
-          if (element) {
-            element.scrollIntoView();
-          }
-
-          // To fetch the next page of records, call `fetchNextPage`.
-          // If there are more records, `page` will get called again.
-          // If there are no more records, `done` will get called.
-          fetchNextPage();
-        },
-        function done(err: any) {
-          if (err) {
-            console.error(err);
-            return;
-          }
+        setRecords(results);
+        const element = document.getElementById('results');
+        if (element) {
+          element.scrollIntoView();
         }
-      );
+
+        // To fetch the next page of records, call `fetchNextPage`.
+        // If there are more records, `page` will get called again.
+        // If there are no more records, `done` will get called.
+        fetchNextPage();
+      },
+      function done(err: any) {
+        if (err) {
+          console.error(err);
+          return;
+        }
+      }
+    );
   };
 
   return (
@@ -101,24 +91,3 @@ export default ({ data }: { data: any }) => (
     </div>
   </>
 );
-
-export const query = graphql`
-  query HomePage {
-    allAirtable(filter: { table: { eq: "Restaurants" } }) {
-      edges {
-        node {
-          data {
-            Restaurant_Name
-            Who_are_they_helping
-            Link
-            Group_They_Are_Supporting
-            Added_By
-            City
-            State
-            Country
-          }
-        }
-      }
-    }
-  }
-`;
