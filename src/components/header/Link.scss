@@ -8,14 +8,13 @@
   letter-spacing: 0.05em;
   display: flex;
   @media (min-width: $min-768) {
-   font-size: 20px;
-   margin-left: 40px;
+    font-size: 20px;
+    margin-left: 40px;
   }
-
 
   text-decoration: none;
 
-  color: #FDBB48;
+  color: $color-strong-blue;
 
   transition: 200ms opacity ease-in-out;
 
@@ -32,8 +31,9 @@
 
     margin-right: 8px;
 
-    path { // stylelint-disable-line
-      fill: #FDBB48;
+    path {
+      // stylelint-disable-line
+      fill: #fdbb48;
     }
 
     @media (min-width: $min-768) {

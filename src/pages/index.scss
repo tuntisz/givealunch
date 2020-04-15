@@ -18,12 +18,15 @@
 
   text-align: center;
   text-transform: uppercase;
+
+  @include strong-blue;
 }
 
 .subtext {
   max-width: 600px;
   margin: 0 auto;
   display: block;
+  @include strong-blue;
 }
 
 .centered {

@@ -1,3 +1,5 @@
+@import 'variables';
+
 @mixin fit {
   position: absolute;
   top: 0;
@@ -14,13 +16,19 @@
   @return $number;
 }
 
-@mixin responsive-font($min-size: $font-size-min, $size: $font-size, $limit: $page-limit) {
+@mixin responsive-font(
+  $min-size: $font-size-min,
+  $size: $font-size,
+  $limit: $page-limit
+) {
   $scale-font-enable: global-variable-exists(scale);
 
   $unitless-min: strip-unit($min-size);
   $unitless-size: strip-unit($size);
   $baseline: strip-unit($min-mobile);
-  $font-multiplier: (($unitless-size - $unitless-min) / (strip-unit($limit) - $baseline));
+  $font-multiplier: (
+    ($unitless-size - $unitless-min) / (strip-unit($limit) - $baseline)
+  );
   $font-baseline: ($unitless-min - $font-multiplier * $baseline);
 
   @if $unitless-min >= $unitless-size {
@@ -37,10 +45,11 @@
     font-size: #{$unitless-min}px;
 
     @if $scale-font-enable == true {
-      font-size: calc((#{$font-multiplier} * #{100vw} + (#{$font-baseline}px)) * #{var(--scale-font)});
-    }
-
-    @else {
+      font-size: calc(
+        (#{$font-multiplier} * #{100vw} + (#{$font-baseline}px)) *
+          #{var(--scale-font)}
+      );
+    } @else {
       font-size: calc((#{$font-multiplier} * #{100vw} + (#{$font-baseline}px)));
     }
   }
@@ -74,7 +83,8 @@
   $padding-top: $segment-padding,
   $padding-bottom: $segment-padding,
   $padding-top-mobile: $segment-padding-mobile,
-  $padding-bottom-mobile: $segment-padding-mobile) {
+  $padding-bottom-mobile: $segment-padding-mobile
+) {
   flex-grow: 1;
 
   // Set up unitless values
@@ -83,17 +93,32 @@
   $padding-top-unitless: strip-unit($padding-top);
   $padding-bottom-unitless: strip-unit($padding-bottom);
 
-  @include vertically-responsive(padding-top, $padding-top-mobile-unitless * 1px);
-  @include vertically-responsive(padding-bottom, $padding-bottom-mobile-unitless * 1px);
+  @include vertically-responsive(
+    padding-top,
+    $padding-top-mobile-unitless * 1px
+  );
+  @include vertically-responsive(
+    padding-bottom,
+    $padding-bottom-mobile-unitless * 1px
+  );
 
   @media (min-width: $min-tablet) {
-    @include vertically-responsive(padding-top, percentage(($padding-top-unitless * 1px) / $page-limit));
-    @include vertically-responsive(padding-bottom, percentage(($padding-bottom-unitless * 1px) / $page-limit));
+    @include vertically-responsive(
+      padding-top,
+      percentage(($padding-top-unitless * 1px) / $page-limit)
+    );
+    @include vertically-responsive(
+      padding-bottom,
+      percentage(($padding-bottom-unitless * 1px) / $page-limit)
+    );
   }
 
   @media (min-width: $page-limit) {
     @include vertically-responsive(padding-top, $padding-top-unitless * 1px);
-    @include vertically-responsive(padding-bottom, $padding-bottom-unitless * 1px);
+    @include vertically-responsive(
+      padding-bottom,
+      $padding-bottom-unitless * 1px
+    );
   }
 }
 
@@ -152,10 +177,14 @@
 
     @if $transform == true {
       will-change: opacity, transform;
-    }
-
-    @else {
+    } @else {
       will-change: opacity;
     }
+  }
+}
+
+@mixin strong-blue {
+  strong {
+    color: $color-strong-blue;
   }
 }
