@@ -22,6 +22,7 @@ $line-height: 1.5;
 $color-font: #fff;
 $color-background: #fff;
 $color-placeholder: #ddd;
+$color-strong-blue: #92d7e5;
 
 // Timings
 $transition-enter: 200ms;
@@ -76,8 +77,4 @@ $segment-padding: 200px; //percentage-based segments spacing
 // Vertical scaling values.
 // remove this map to disable vertical scaling
 // value 1 = height breakpoint, value 2 = multiplier
-$scale: (
-  (920px, 0.975),
-  (800px, 0.95),
-  (690px, 0.925),
-);
+$scale: ((920px, 0.975), (800px, 0.95), (690px, 0.925));

@@ -79,11 +79,13 @@ export default ({ data }: { data: any }) => (
     <Intro>
       Working from home? Might as well
       <br />
-      <h1 className={s.callout}>Give your lunch money</h1>
+      <h1 className={s.callout}>
+        <strong>Give</strong> your lunch money
+      </h1>
       <br />
       <p className={s.subtext}>
-        Donate your lunch money to a local restaurant cooking meals for hospital
-        workers.
+        <strong>Donate your lunch money</strong> to a local restaurant cooking
+        meals for hospital workers.
       </p>
     </Intro>
     <div className={s.centered}>

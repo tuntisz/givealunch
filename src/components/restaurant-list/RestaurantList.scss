@@ -1,3 +1,5 @@
+@import '~styles/config';
+
 .restaurant {
   font-size: 1.2rem;
   margin: 3rem auto;
@@ -13,7 +15,7 @@
     border-bottom: 2px solid white;
   }
   strong {
-    font-family: "Peace Sans";
+    font-family: 'Peace Sans';
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
@@ -21,9 +23,7 @@
     color: #fdbb48;
   }
   &:nth-of-type(2n + 2) {
-    strong {
-      color: #92d7e5;
-    }
+    @include strong-blue;
   }
 }
 .button {
