@@ -1,0 +1,24 @@
+@import '~styles/config';
+
+.disclaimerDiv {
+  margin: 20px auto 0;
+  width: auto;
+  text-align: center;
+}
+
+.disclaimer {
+  font-family: Work Sans;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 18px;
+  /* or 130% */
+
+  text-align: center;
+
+  color: $color-deep-blue;
+
+  strong {
+    font-weight: 600;
+    font-weight: bold;
+  }
+}

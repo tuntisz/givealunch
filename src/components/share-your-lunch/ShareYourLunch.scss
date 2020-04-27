@@ -1,0 +1,62 @@
+@import '~styles/config';
+
+.callout {
+  margin: 30px auto 0;
+  font-family: Peace Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 60px;
+  line-height: 60px;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  color: $color-strong-red;
+}
+
+.suggestion {
+  font-family: Peace Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 42px;
+  /* or 87% */
+
+  margin: 24px 0;
+
+  text-align: center;
+
+  color: $color-strong-red;
+}
+
+.socialMedias {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+}
+
+.socialMediaIcon {
+  width: 54px;
+  // background-color: red;
+}
+
+.giveEveryWeek {
+  font-family: Kanit;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+  /* identical to box height, or 75% */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 21px 28px;
+
+  margin: 0 auto;
+
+  background: #dd2e44;
+  color: #ffffff;
+}

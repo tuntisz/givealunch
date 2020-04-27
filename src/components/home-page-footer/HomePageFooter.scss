@@ -1,0 +1,15 @@
+@import '~styles/config';
+
+.taco {
+  padding: 20px;
+  // height: 1000px;
+  background-color: $color-strong-blue;
+  background-image: url('../../assets/images/Taco Blue BG 1.png');
+  background-position: left top 130px;
+  background-repeat: no-repeat;
+  background-size: 380px;
+
+  @media (min-width: $min-768) {
+    padding: 59px;
+  }
+}
