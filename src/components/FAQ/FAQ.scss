@@ -1,0 +1,55 @@
+@import '~styles/config';
+
+.box {
+  width: auto;
+  max-width: 600px;
+  border: 5px solid $color-strong-red;
+  margin: 20px auto;
+  padding: 10px;
+  text-align: center;
+
+  @media (min-width: $min-768) {
+    margin: 101px auto;
+    padding: 20px;
+  }
+}
+
+.qAndA {
+  margin: 20px;
+}
+
+.question {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 31px;
+  /* or 130% */
+
+  text-align: center;
+
+  color: $color-strong-red;
+}
+
+.answer {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 31px;
+  /* or 130% */
+
+  text-align: center;
+
+  color: $color-deep-blue;
+
+  a {
+    text-decoration: none;
+    font-family: Peace Sans;
+    font-style: normal;
+    font-weight: normal;
+    /* or 87% */
+
+    color: $color-strong-red;
+  }
+}

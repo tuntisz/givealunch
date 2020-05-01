@@ -6,6 +6,7 @@ import { FetchRestaurants } from 'services/Airtable';
 
 import { Intro } from 'components/intro/Intro';
 import RestaurantList from 'components/restaurant-list/RestaurantList';
+import HomePageFooter from 'components/home-page-footer/HomePageFooter';
 
 import s from './index.scss';
 
@@ -93,5 +94,6 @@ export default ({ data }: { data: any }) => (
         <RestaurantSearch />
       </div>
     </div>
+    <HomePageFooter />
   </>
 );
