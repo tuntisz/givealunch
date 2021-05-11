@@ -43,7 +43,7 @@
     "gh-pages": "^2.2.0",
     "gsap": "2.1.2",
     "gsap-tools": "1.0.9",
-    "lodash": "4.17.11",
+    "lodash": "4.17.21",
     "react": "16.8.4",
     "react-dom": "16.8.4",
     "react-helmet": "5.2.0"
