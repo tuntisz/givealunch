@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "airtable": "^0.8.1",
-    "gatsby": "2.1.23",
+    "gatsby": "2.32.13",
     "gatsby-image": "2.0.31",
     "gatsby-plugin-config": "1.0.7",
     "gatsby-plugin-layout": "1.0.12",
